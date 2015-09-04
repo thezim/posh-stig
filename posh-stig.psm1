@@ -33,5 +33,3 @@
 
 Set-Alias -Name 'gckl' -Value 'Get-Checklist' -Confirm:$false
 Export-ModuleMember -Function Get-Checklist -Alias gckl
-
-"UTF8 testing, remove this line if you see it"

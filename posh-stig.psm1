@@ -35,3 +35,5 @@ function Get-Checklist {
     }
     $data
 }
+
+Export-ModuleMember -Function Get-Checklist

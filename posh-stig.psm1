@@ -6,7 +6,6 @@ function Get-Checklist {
     $data = @()
     $fileinfo = Get-Item -Path $Path
     $checklist = ([Xml](Get-Content -Raw -Path $Path)).CHECKLIST
-    $output = @()
     $info = @{
         FILE = $fileinfo.FullName
         FILE_CREATE_DATE = $fileinfo.CreationTime
@@ -36,4 +35,3 @@ function Get-Checklist {
     }
     $data
 }
-

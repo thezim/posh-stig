@@ -1,4 +1,5 @@
-﻿function Get-Checklist {
+﻿function Get-Checklist
+{
     param(
         [ValidateNotNullOrEmpty()]
 		[ValidateScript({Test-Path -PathType Leaf -Path $_})]
@@ -7,21 +8,30 @@
     $checklist = ([Xml](Get-Content -Raw -Path $Path)).CHECKLIST
     $assetinfo = @{}
     # parse asset information
-    foreach($node in $checklist.ASSET.ChildNodes){
-        if($node.Name -ne "ASSET_VAL"){
+    foreach($node in $checklist.ASSET.ChildNodes)
+    {
+        if($node.Name -ne "ASSET_VAL")
+        {
             $assetinfo["$($node.Name)"] = $node.'#text'
-        } else {
+        }
+        else
+        {
             $assetinfo["$($node.AV_NAME.'#text')"] = $node.AV_DATA.'#text'
         }
     }
     $vulns = @()
     # parse vulnerablility data
-    foreach($vuln in $checklist.VULN){
+    foreach($vuln in $checklist.VULN)
+    {
         $vulninfo = @{}
-        foreach($node in $vuln.ChildNodes){
-            if($node.Name -eq "STIG_DATA"){
+        foreach($node in $vuln.ChildNodes)
+        {
+            if($node.Name -eq "STIG_DATA")
+            {
                 $vulninfo["$($node.VULN_ATTRIBUTE)"] = $node.ATTRIBUTE_DATA
-            } else {
+            }
+            else
+            {
                 $vulninfo["$($node.Name)"] = $node.'#text'
             }
         }

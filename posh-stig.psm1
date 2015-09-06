@@ -3,7 +3,7 @@
     [CmdletBinding()]
     param(
         [ValidateNotNullOrEmpty()]
-		[ValidateScript({Test-Path -PathType Leaf -Path $_})]
+        [ValidateScript({Test-Path -PathType Leaf -Path $_})]
         [string]$Path
     )
     Process

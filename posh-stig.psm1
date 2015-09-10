@@ -8,7 +8,9 @@
     )
     Process
     {
-        $checklist = ([Xml](Get-Content -Raw -Path $Path)).CHECKLIST
+        $content = Get-Content -Raw -Path $Path -Encoding UTF8
+        $xml = [xml]$content
+        $checklist = $xml.CHECKLIST
         $assetinfo = @{}
         # parse asset information
         foreach($node in $checklist.ASSET.ChildNodes)

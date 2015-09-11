@@ -1,2 +1,2 @@
 ﻿Import-Module .\posh-stig.psm1
-Get-Checklist -Path .\stig.ckl
+Import-Checklist -Path .\stig.ckl

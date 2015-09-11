@@ -1,6 +1,37 @@
-﻿function Get-Checklist
+﻿function Import-Checklist
 {
-    [CmdletBinding()]
+    <#
+	.SYNOPSIS
+		Imports a STIG checklist file and converts it into a custom object
+
+	.DESCRIPTION
+		Imports a STIG (Security Technical Implementation Guide) file and converts it into a
+		custom object to be viewed or used by another PowerShell cmdlet.
+
+	.PARAMETER  Path
+		Specifies the path to the checklist file.
+
+	.EXAMPLE
+		Import-Checklist -Path C:\temp\server.ckl
+		
+		Will Import the checklist file "server.ckl" from C:\temp\
+
+	.INPUTS
+		System.String
+		
+		You can pipe a string that contains a path to the checklist file.
+
+	.OUTPUTS
+		System.Object
+
+	.NOTES
+		No notes yet.
+
+	.LINK
+		https://github.com/thezim/posh-stig
+	#>
+
+	[CmdletBinding()]
     param(
         [ValidateNotNullOrEmpty()]
         [ValidateScript({Test-Path -PathType Leaf -Path $_})]
@@ -90,5 +121,5 @@
     }
 }
 
-Set-Alias -Name 'gckl' -Value 'Get-Checklist' -Confirm:$false
-Export-ModuleMember -Function Get-Checklist -Alias gckl
+Set-Alias -Name 'ickl' -Value 'Import-Checklist' -Confirm:$false
+Export-ModuleMember -Function Import-Checklist -Alias ickl

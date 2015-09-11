@@ -19,7 +19,7 @@
 	.INPUTS
 		System.String
 		
-		You can pipe a string that contains a path to the checklist file.
+		A string that contains a path to the checklist file.
 
 	.OUTPUTS
 		System.Object

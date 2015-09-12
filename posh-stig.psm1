@@ -2,7 +2,7 @@
 {
     <#
 	.SYNOPSIS
-		Imports a STIG checklist file and converts it into a custom object
+		Imports a STIG checklist file and converts it into a custom object.
 
 	.DESCRIPTION
 		Imports a STIG (Security Technical Implementation Guide) file and converts it into a

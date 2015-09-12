@@ -121,5 +121,5 @@
     }
 }
 
-Set-Alias -Name 'ickl' -Value 'Import-Checklist' -Confirm:$false
-Export-ModuleMember -Function Import-Checklist -Alias ickl
+Set-Alias -Name 'ipckl' -Value 'Import-Checklist' -Confirm:$false
+Export-ModuleMember -Function Import-Checklist -Alias ipckl

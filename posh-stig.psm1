@@ -22,7 +22,7 @@
 		A string that contains a path to the checklist file.
 
 	.OUTPUTS
-		System.Object
+		System.PSObject
 
 	.NOTES
 		No notes yet.

@@ -31,7 +31,7 @@
 		https://github.com/thezim/posh-stig
 	#>
 
-	[CmdletBinding()]
+    [CmdletBinding()]
     param(
         [ValidateNotNullOrEmpty()]
         [ValidateScript({Test-Path -PathType Leaf -Path $_})]

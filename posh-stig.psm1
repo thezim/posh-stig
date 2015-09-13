@@ -1,35 +1,35 @@
 ﻿function Import-Checklist
 {
     <#
-	.SYNOPSIS
-		Imports a STIG checklist file and converts it into a custom object.
+    .SYNOPSIS
+        Imports a STIG checklist file and converts it into a custom object.
 
-	.DESCRIPTION
-		Imports a STIG (Security Technical Implementation Guide) file and converts it into a
-		custom object to be viewed or used by another PowerShell cmdlet.
+    .DESCRIPTION
+        Imports a STIG (Security Technical Implementation Guide) file and converts it into a
+        custom object to be viewed or used by another PowerShell cmdlet.
 
-	.PARAMETER  Path
-		Specifies the path to the checklist file.
+    .PARAMETER  Path
+        Specifies the path to the checklist file.
 
-	.EXAMPLE
-		Import-Checklist -Path C:\temp\filename.ckl
-		
-		Will Import the checklist file "filename.ckl" from C:\temp\
+    .EXAMPLE
+        Import-Checklist -Path C:\temp\filename.ckl
+        
+        Will Import the checklist file "filename.ckl" from C:\temp\
 
-	.INPUTS
-		System.String
-		
-		A string that contains a path to the checklist file.
+    .INPUTS
+        System.String
+        
+        A string that contains a path to the checklist file.
 
-	.OUTPUTS
-		System.PSObject
+    .OUTPUTS
+        System.PSObject
 
-	.NOTES
-		No notes yet.
+    .NOTES
+        No notes yet.
 
-	.LINK
-		https://github.com/thezim/posh-stig
-	#>
+    .LINK
+        https://github.com/thezim/posh-stig
+    #>
 
     [CmdletBinding()]
     param(

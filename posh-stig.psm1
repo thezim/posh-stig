@@ -12,9 +12,9 @@
 		Specifies the path to the checklist file.
 
 	.EXAMPLE
-		Import-Checklist -Path C:\temp\server.ckl
+		Import-Checklist -Path C:\temp\filename.ckl
 		
-		Will Import the checklist file "server.ckl" from C:\temp\
+		Will Import the checklist file "filename.ckl" from C:\temp\
 
 	.INPUTS
 		System.String

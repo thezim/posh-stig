@@ -33,6 +33,13 @@
 
     [CmdletBinding()]
     param(
+        [Parameter(
+            Position=0, 
+            Mandatory=$true, 
+            ValueFromPipeline=$true,
+            ValueFromPipelineByPropertyName=$true)
+        ]
+        [Alias('FullName')]
         [ValidateNotNullOrEmpty()]
         [ValidateScript({Test-Path -PathType Leaf -Path $_})]
         [string]$Path

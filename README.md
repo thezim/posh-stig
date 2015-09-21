@@ -14,10 +14,23 @@ The current [STIG Viewer](http://iase.disa.mil/stigs/Pages/stig-viewing-guidance
 4. Run `.\install.ps1`
 
 ## Usage
+
+Import the PowerShell Module.
 ``` powershell
+Import-Module -Name posh-stig
+```
+Import a checklist from a file.
+```powershell
 Import-Checklist -Path filename.clk
 ```
-
+Import multiple checklist files.
+```powershell
+Import-Checklist -Path @(filename.clk, another.ckl)
+```
+Import multiple checklist files from pipeline.
+```powershell
+Get-ChildItem -Filter *.ckl | Import-Checklist
+```
 ## Contributing
 1. Fork it!
 2. Create your feature branch: `git checkout -b my-new-feature`

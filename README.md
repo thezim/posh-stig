@@ -1,39 +1,55 @@
 #posh-stig
-####NAME
 
-Import-Checklist
+## Description
+A PowerShell module for reading Security Technical Implementation Guides (STIGs) checklists.
 
-####SYNOPSIS
+## Motivation
+The current [STIG Viewer](http://iase.disa.mil/stigs/Pages/stig-viewing-guidance.aspx) that generates and modifies checklist files did not offer that ablility to export data from the command line. This module was created to export large amounts of checklists in a automated way so they can be imported into a relational/NoSQL database and then aggregated.
 
-Imports a STIG checklist file and converts it into a custom object.
+## Installation
 
-####SYNTAX
+1. Open a PowerShell prompt.
+2. Run `git clone https://github.com/thezim/posh-stig`
+3. Run `cd posh-stig`
+4. Run `.\install.ps1`
 
-Import-Checklist [-Path] <String> [<CommonParameters>]
-
-####DESCRIPTION
-
-Imports a STIG (Security Technical Implementation Guide) file and converts it into a
-custom object to be viewed or used by another PowerShell cmdlet.
-
-####PARAMETERS
-
--Path <String>
-Specifies the path to the checklist file.
-
-<CommonParameters>
-This cmdlet supports the common parameters: Verbose, Debug, ErrorAction, ErrorVariable, WarningAction, WarningVariable, OutBuffer, PipelineVariable, and OutVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
-
--------------------------- EXAMPLE 1 --------------------------
-
+## Usage
 ``` powershell
-PS C:\>Import-Checklist -Path C:\temp\filename.ckl
+Import-Checklist -Path filename.clk
 ```
-Will Import the checklist file "filename.ckl" from C:\temp\
 
-####REMARKS
+## Contributing
+1. Fork it!
+2. Create your feature branch: `git checkout -b my-new-feature`
+3. Commit your changes: `git commit -am 'Add some feature'`
+4. Push to the branch: `git push origin my-new-feature`
+5. Submit a pull request.
 
-To see the examples, type: "get-help Import-Checklist -examples".  
-For more information, type: "get-help Import-Checklist -detailed".  
-For technical information, type: "get-help Import-Checklist -full".  
-For online help, type: "get-help Import-Checklist -online"  
+## Credits
+[Project Contributors](https://github.com/thezim/posh-stig/graphs/contributors)
+
+## Links
+[Security Technical Implementation Guides (STIGs)](http://iase.disa.mil/stigs/Pages/index.aspx)
+
+## License
+The MIT License (MIT)
+
+Copyright (c) 2015
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.

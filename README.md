@@ -1,7 +1,7 @@
 #posh-stig
 
 ## Description
-A PowerShell module for reading Security Technical Implementation Guides (STIGs) checklists.
+A PowerShell module for reading DISA Security Technical Implementation Guides (STIGs) checklists.
 
 ## Motivation
 The current [STIG Viewer](http://iase.disa.mil/stigs/Pages/stig-viewing-guidance.aspx) that generates and modifies checklist files did not offer that ablility to export data from the command line. This module was created to export large amounts of checklists in a automated way so they can be imported into a relational/NoSQL database and then aggregated.

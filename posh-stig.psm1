@@ -53,18 +53,17 @@
         # parse asset information
         foreach($node in $checklist.ASSET.ChildNodes)
         {
-            if($node.Name -ne "ASSET_VAL")
-            {
-                $assetinfo["$($node.Name)"] = $node.'#text'
-            }
-            else
-            {
-                $assetinfo["$($node.AV_NAME.'#text')"] = $node.AV_DATA.'#text'
-            }
+            $assetinfo["$($node.AV_NAME.'#text')"] = $node.AV_DATA.'#text'
+        }
+        # parse STIG info
+        $stiginfo = @{}
+        foreach($node in $checklist.STIGS.iSTIG.STIG_INFO.ChildNodes)
+        {
+            $stiginfo["$($node.SID_NAME)"] = $node.SID_DATA
         }
         $vulns = @()
         # parse vulnerablility data
-        foreach($vuln in $checklist.VULN)
+        foreach($vuln in $checklist.STIGS.iSTIG.VULN)
         {
             $vulninfo = @{}
             foreach($node in $vuln.ChildNodes)
@@ -113,15 +112,26 @@
         }
         # return object
         New-Object PSObject -Property @{
-            Title = $checklist.STIG_INFO.STIG_TITLE
-            Version = $checklist.SV_VERSION
+            Source = $stiginfo.source
+            CustomName = $stiginfo.customname
+            Description = $stiginfo.Description
+            Filename = $stiginfo.filename
+            Version = $stiginfo.version
+            UUID = $stiginfo.uuid
+            Notice = $stiginfo.notice
+            Classification = $stiginfo.classification
+            ReleaseInfo = $stiginfo.releaseinfo
+            Title = $stiginfo.title
+            StigId = $stiginfo.stigid
             Vulnerabilities = $vulns
             Asset = New-Object PSObject -Property @{
                 AssetType = $assetinfo.ASSET_TYPE
+                HostName = $assetinfo.HOST_NAME
                 HostIP = $assetinfo.HOST_IP
                 HostMAC = $assetinfo.HOST_MAC
-                HostName = $assetinfo.HOST_NAME
-                Role = $assetinfo.ROLE
+                HostGUID = $assetinfo.HOST_GUID
+                HostFQDN = $assetinfo.HOST_FQDN
+                TechArea = $assetinfo.TECH_AREA
                 TargetKey = $assetinfo.TARGET_KEY
             }
         }

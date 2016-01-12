@@ -53,7 +53,7 @@
         # parse asset information
         foreach($node in $checklist.ASSET.ChildNodes)
         {
-            $assetinfo["$($node.AV_NAME.'#text')"] = $node.AV_DATA.'#text'
+            $assetinfo["$($node.Name)"] = $node.'#text'
         }
         # parse STIG info
         $stiginfo = @{}

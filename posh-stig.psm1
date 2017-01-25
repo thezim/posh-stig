@@ -13,12 +13,12 @@
 
     .EXAMPLE
         Import-Checklist -Path C:\temp\filename.ckl
-        
+
         Will Import the checklist file "filename.ckl" from C:\temp\
 
     .INPUTS
         System.String
-        
+
         A string that contains a path to the checklist file.
 
     .OUTPUTS
@@ -34,8 +34,8 @@
     [CmdletBinding()]
     param(
         [Parameter(
-            Position=0, 
-            Mandatory=$true, 
+            Position=0,
+            Mandatory=$true,
             ValueFromPipeline=$true,
             ValueFromPipelineByPropertyName=$true)
         ]
@@ -82,7 +82,7 @@
                 FindingDetails = $vulninfo.FINDING_DETAILS
                 SeverityJustification = $vulninfo.SEVERITY_JUSTIFICATION
                 SeverityOverride = $vulninfo.SEVERITY_OVERRIDE
-                Status = $vulninfo.STATUS                   
+                Status = $vulninfo.STATUS
                 Data = New-Object PSObject -Property @{
                     CheckContent = $vulninfo.Check_Content
                     Check_Content_Ref = $vulninfo.Check_Content_Ref
@@ -114,7 +114,7 @@
         New-Object PSObject -Property @{
             Source = $stiginfo.source
             CustomName = $stiginfo.customname
-            Description = $stiginfo.Description
+            Description = $stiginfo.description
             Filename = $stiginfo.filename
             Version = $stiginfo.version
             UUID = $stiginfo.uuid

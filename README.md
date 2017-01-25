@@ -25,6 +25,9 @@ Import-Checklist -Path filename.ckl
 ```
 Import multiple checklist files from pipeline.
 ```powershell
+@("foo.ckl", "bar.ckl") | Import-Checklist
+```
+```powershell
 Get-ChildItem -Filter *.ckl | Import-Checklist
 ```
 ## Contributing

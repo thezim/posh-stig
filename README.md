@@ -23,10 +23,6 @@ Import a checklist from a file.
 ```powershell
 Import-Checklist -Path filename.ckl
 ```
-Import multiple checklist files.
-```powershell
-Import-Checklist -Path @(filename.ckl, another.ckl)
-```
 Import multiple checklist files from pipeline.
 ```powershell
 Get-ChildItem -Filter *.ckl | Import-Checklist
